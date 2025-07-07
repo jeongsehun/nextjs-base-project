@@ -9,7 +9,9 @@
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "analyze": "ANALYZE=true next build",
+    "analyze:server": "ANALYZE=true next build && npx serve .next"
   },
   "dependencies": {
     "next": "15.3.5",
@@ -18,6 +20,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@next/bundle-analyzer": "^15.3.5",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
