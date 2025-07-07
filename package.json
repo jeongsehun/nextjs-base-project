@@ -11,7 +11,11 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "analyze": "ANALYZE=true next build",
-    "analyze:server": "ANALYZE=true next build && npx serve .next"
+    "analyze:server": "ANALYZE=true next build && npx serve .next",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "tsc --noEmit --watch",
+    "clean": "rm -rf .next out dist",
+    "check-all": "yarn type-check && yarn lint && yarn format:check"
   },
   "dependencies": {
     "next": "15.3.5",
@@ -25,8 +29,14 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@typescript-eslint/eslint-plugin": "^8.35.1",
+    "@typescript-eslint/parser": "^8.35.1",
     "eslint": "^9",
     "eslint-config-next": "15.3.5",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-unused-imports": "^4.1.4",
     "prettier": "^3.6.2",
     "tailwindcss": "^4",
     "typescript": "^5"

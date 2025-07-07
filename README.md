@@ -34,6 +34,69 @@ yarn analyze:server
 
 The analysis will generate an interactive treemap showing the size of each module in your bundle, helping you identify optimization opportunities.
 
+## Development Tools
+
+This project includes several development tools for code quality and consistency:
+
+### TypeScript
+
+- Strict type checking enabled
+- Enhanced compiler options for better development experience
+- Custom type definitions in `src/types/`
+- Path mapping configured for clean imports
+
+### ESLint & Prettier
+
+- Comprehensive ESLint rules for TypeScript and React
+- Automatic import sorting and unused import removal
+- React props sorting for consistency
+- Prettier integration for code formatting
+
+```bash
+# Run linting
+yarn lint
+
+# Fix auto-fixable linting issues
+yarn lint:fix
+
+# Format code with Prettier
+yarn format
+
+# Check formatting without modifying files
+yarn format:check
+
+# Type checking
+yarn type-check
+
+# Watch mode for type checking
+yarn type-check:watch
+
+# Run all checks (type + lint + format)
+yarn check-all
+
+# Clean build artifacts
+yarn clean
+```
+
+### VS Code Integration
+
+- Workspace settings for optimal development experience
+- Recommended extensions for Next.js development
+- Auto-formatting on save
+- ESLint integration with auto-fix
+
+### Path Mapping
+
+The following import aliases are configured:
+
+- `@/*` → `./src/*`
+- `@/components/*` → `./src/components/*`
+- `@/lib/*` → `./src/lib/*`
+- `@/utils/*` → `./src/utils/*`
+- `@/types/*` → `./src/types/*`
+- `@/hooks/*` → `./src/hooks/*`
+- `@/styles/*` → `./src/styles/*`
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
