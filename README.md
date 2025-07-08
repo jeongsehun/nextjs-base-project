@@ -78,6 +78,32 @@ yarn check-all
 yarn clean
 ```
 
+### Code Quality Automation
+
+This project includes automated code quality checks using Husky and lint-staged:
+
+```bash
+# Make a conventional commit (interactive)
+yarn commit
+
+# Manual pre-commit checks
+yarn pre-commit
+```
+
+**Git Hooks:**
+
+- **Pre-commit**: Automatically runs ESLint fix and Prettier format on staged files
+- **Commit-msg**: Validates commit messages follow conventional commit format
+
+**Conventional Commits:**
+
+- Format: `type(scope): description`
+- Types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`
+- Examples:
+  - `feat: add user authentication`
+  - `fix(auth): resolve login redirect issue`
+  - `docs: update README with new features`
+
 ### VS Code Integration
 
 - Workspace settings for optimal development experience

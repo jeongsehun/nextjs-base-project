@@ -19,7 +19,24 @@
     "test:coverage": "jest --coverage",
     "test:ci": "jest --ci --coverage --watchAll=false",
     "clean": "rm -rf .next out dist coverage",
-    "check-all": "yarn type-check && yarn lint && yarn test:ci && yarn format:check"
+    "check-all": "yarn type-check && yarn lint && yarn test:ci && yarn format:check",
+    "prepare": "husky",
+    "commit": "git-cz",
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,yml,yaml}": [
+      "prettier --write"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -29,6 +46,8 @@
     "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
     "@eslint/eslintrc": "^3",
     "@next/bundle-analyzer": "^15.3.5",
     "@tailwindcss/postcss": "^4",
@@ -42,11 +61,15 @@
     "@types/react-dom": "^19",
     "@typescript-eslint/eslint-plugin": "^8.35.1",
     "@typescript-eslint/parser": "^8.35.1",
+    "commitizen": "^4.3.1",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^9",
     "eslint-config-next": "15.3.5",
     "eslint-config-prettier": "^10.1.5",
+    "husky": "^9.1.7",
     "jest": "^30.0.4",
     "jest-environment-jsdom": "^30.0.4",
+    "lint-staged": "^16.1.2",
     "prettier": "^3.6.2",
     "tailwindcss": "^4",
     "ts-node": "^10.9.2",
