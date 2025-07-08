@@ -1,139 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Base Project
 
-## Getting Started
+Next.js 프로젝트 개발 시 반복적으로 설정하는 개발 도구들과 설정을 미리 구성한 베이스 템플릿입니다.
 
-First, run the development server:
+## 포함된 기능
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **TypeScript**: 엄격한 타입 체크
+- **ESLint + Prettier**: 코드 품질 및 포맷팅
+- **Husky + Lint-staged**: Git hooks를 통한 자동화된 코드 검사
+- **Commitlint**: Conventional Commits 형식 관리
+- **TailwindCSS**: 유틸리티 CSS 프레임워크
+- **Testing**: Jest + Testing Library
+- **Bundle Analyzer**: 번들 크기 분석
+- **VS Code 설정**: 개발 환경 최적화
 
 ## Bundle Analysis
 
-This project includes bundle analysis to help optimize your application size:
-
 ```bash
-# Analyze bundle size and open interactive treemap
+# 번들 크기 분석
 yarn analyze
-
-# Analyze and serve the built application
-yarn analyze:server
 ```
-
-The analysis will generate an interactive treemap showing the size of each module in your bundle, helping you identify optimization opportunities.
 
 ## Development Tools
 
-This project includes several development tools for code quality and consistency:
-
-### TypeScript
-
-- Strict type checking enabled
-- Enhanced compiler options for better development experience
-- Custom type definitions in `src/types/`
-- Path mapping configured for clean imports
-
 ### ESLint & Prettier
 
-- Comprehensive ESLint rules for TypeScript and React
-- Automatic import sorting and unused import removal
-- React props sorting for consistency
-- Prettier integration for code formatting
-
 ```bash
-# Run linting
+# 린팅 실행
 yarn lint
 
-# Fix auto-fixable linting issues
+# 자동 수정 가능한 린트 문제 해결
 yarn lint:fix
 
-# Format code with Prettier
+# 코드 포맷팅
 yarn format
 
-# Check formatting without modifying files
+# 포맷팅 체크
 yarn format:check
 
-# Type checking
+# 타입 체크
 yarn type-check
 
-# Watch mode for type checking
+# 타입 체크 (Watch 모드)
 yarn type-check:watch
 
-# Run all checks (type + lint + format)
+# 모든 검사 실행 (type + lint + test + format)
 yarn check-all
 
-# Clean build artifacts
+# 빌드 결과물 정리
 yarn clean
+```
+
+### Testing
+
+```bash
+# 테스트 실행
+yarn test
+
+# 테스트 (Watch 모드)
+yarn test:watch
+
+# 커버리지 포함 테스트
+yarn test:coverage
+
+# CI용 테스트
+yarn test:ci
 ```
 
 ### Code Quality Automation
 
-This project includes automated code quality checks using Husky and lint-staged:
-
 ```bash
-# Make a conventional commit (interactive)
+# Conventional commit (대화형)
 yarn commit
 
-# Manual pre-commit checks
+# Pre-commit 검사 수동 실행
 yarn pre-commit
 ```
 
 **Git Hooks:**
 
-- **Pre-commit**: Automatically runs ESLint fix and Prettier format on staged files
-- **Commit-msg**: Validates commit messages follow conventional commit format
+- **Pre-commit**: 스테이지된 파일에 ESLint fix 및 Prettier format 자동 실행
+- **Commit-msg**: Conventional commit 형식 검증
 
 **Conventional Commits:**
 
-- Format: `type(scope): description`
-- Types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`
-- Examples:
+- 형식: `type(scope): description`
+- 타입: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`
+- 예시:
   - `feat: add user authentication`
   - `fix(auth): resolve login redirect issue`
   - `docs: update README with new features`
 
-### VS Code Integration
-
-- Workspace settings for optimal development experience
-- Recommended extensions for Next.js development
-- Auto-formatting on save
-- ESLint integration with auto-fix
-
-### Path Mapping
-
-The following import aliases are configured:
-
-- `@/*` → `./src/*`
-- `@/components/*` → `./src/components/*`
-- `@/lib/*` → `./src/lib/*`
-- `@/utils/*` → `./src/utils/*`
-- `@/types/*` → `./src/types/*`
-- `@/hooks/*` → `./src/hooks/*`
-- `@/styles/*` → `./src/styles/*`
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+[Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)을 사용하여 배포할 수 있습니다.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+자세한 내용은 [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying)을 참고하세요.
