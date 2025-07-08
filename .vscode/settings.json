@@ -5,6 +5,7 @@
   "editor.formatOnType": false,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit",
     "source.organizeImports": "explicit"
   },
   "typescript.preferences.importModuleSpecifier": "relative",
@@ -35,7 +36,10 @@
   },
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.stylelint": "explicit"
+    }
   },
   "prettier.requireConfig": true,
   "prettier.useEditorConfig": false,
@@ -50,6 +54,8 @@
   "eslint.enable": true,
   "eslint.format.enable": true,
   "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "stylelint.enable": true,
+  "stylelint.validate": ["css", "postcss", "scss", "sass"],
   "files.associations": {
     "*.css": "tailwindcss"
   },

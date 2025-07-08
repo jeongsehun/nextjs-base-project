@@ -14,18 +14,31 @@
     "analyze:server": "ANALYZE=true next build && npx serve .next",
     "type-check": "tsc --noEmit",
     "type-check:watch": "tsc --noEmit --watch",
-    "clean": "rm -rf .next out dist",
-    "check-all": "yarn type-check && yarn lint && yarn format:check"
+    "stylelint": "stylelint \"**/*.{css,scss,sass}\"",
+    "stylelint:fix": "stylelint \"**/*.{css,scss,sass}\" --fix",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:ci": "jest --ci --coverage --watchAll=false",
+    "clean": "rm -rf .next out dist coverage",
+    "check-all": "yarn type-check && yarn lint && yarn stylelint && yarn test:ci && yarn format:check"
   },
   "dependencies": {
+    "clsx": "^2.1.1",
     "next": "15.3.5",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@next/bundle-analyzer": "^15.3.5",
     "@tailwindcss/postcss": "^4",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/jest": "^30.0.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
@@ -37,8 +50,15 @@
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint-plugin-unused-imports": "^4.1.4",
+    "jest": "^30.0.4",
+    "jest-environment-jsdom": "^30.0.4",
     "prettier": "^3.6.2",
+    "stylelint": "^16.21.1",
+    "stylelint-config-standard": "^38.0.0",
+    "stylelint-config-tailwindcss": "^1.0.0",
+    "stylelint-prettier": "^5.0.3",
     "tailwindcss": "^4",
+    "ts-node": "^10.9.2",
     "typescript": "^5"
   }
 }

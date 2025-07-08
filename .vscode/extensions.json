@@ -2,6 +2,7 @@
   "recommendations": [
     "esbenp.prettier-vscode",
     "dbaeumer.vscode-eslint",
+    "stylelint.vscode-stylelint",
     "ms-vscode.vscode-typescript-next",
     "bradlc.vscode-tailwindcss",
     "dsznajder.es7-react-js-snippets",
