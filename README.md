@@ -7,7 +7,6 @@ Next.js 프로젝트 개발 시 반복적으로 설정하는 개발 도구들과
 - **TypeScript**: 엄격한 타입 체크
 - **ESLint + Prettier**: 코드 품질 및 포맷팅
 - **Husky + Lint-staged**: Git hooks를 통한 자동화된 코드 검사
-- **Commitlint**: Conventional Commits 형식 관리
 - **TailwindCSS**: 유틸리티 CSS 프레임워크
 - **Testing**: Jest + Testing Library
 - **Bundle Analyzer**: 번들 크기 분석
@@ -69,9 +68,6 @@ yarn test:ci
 ### Code Quality Automation
 
 ```bash
-# Conventional commit (대화형)
-yarn commit
-
 # Pre-commit 검사 수동 실행
 yarn pre-commit
 ```
@@ -79,16 +75,6 @@ yarn pre-commit
 **Git Hooks:**
 
 - **Pre-commit**: 스테이지된 파일에 ESLint fix 및 Prettier format 자동 실행
-- **Commit-msg**: Conventional commit 형식 검증
-
-**Conventional Commits:**
-
-- 형식: `type(scope): description`
-- 타입: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`
-- 예시:
-  - `feat: add user authentication`
-  - `fix(auth): resolve login redirect issue`
-  - `docs: update README with new features`
 
 ## Deploy on Vercel
 

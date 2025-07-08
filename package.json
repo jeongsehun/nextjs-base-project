@@ -21,7 +21,6 @@
     "clean": "rm -rf .next out dist coverage",
     "check-all": "yarn type-check && yarn lint && yarn test:ci && yarn format:check",
     "prepare": "husky",
-    "commit": "git-cz",
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
@@ -33,11 +32,6 @@
       "prettier --write"
     ]
   },
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
-  },
   "dependencies": {
     "clsx": "^2.1.1",
     "next": "15.3.5",
@@ -46,8 +40,6 @@
     "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.8.1",
-    "@commitlint/config-conventional": "^19.8.1",
     "@eslint/eslintrc": "^3",
     "@next/bundle-analyzer": "^15.3.5",
     "@tailwindcss/postcss": "^4",
@@ -61,8 +53,6 @@
     "@types/react-dom": "^19",
     "@typescript-eslint/eslint-plugin": "^8.35.1",
     "@typescript-eslint/parser": "^8.35.1",
-    "commitizen": "^4.3.1",
-    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^9",
     "eslint-config-next": "15.3.5",
     "eslint-config-prettier": "^10.1.5",
