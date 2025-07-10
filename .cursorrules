@@ -1,0 +1,36 @@
+# Next.js Base Project - Cursor Rules
+# 모든 Next.js 프로젝트에서 공통으로 적용할 개발 규칙
+
+## 프로젝트 기본 설정
+- Next.js 15+ App Router 사용
+- TypeScript strict mode 필수
+- Tailwind CSS 우선 사용
+- ESLint + Prettier 적용
+
+## 개발 규칙
+- Server Components 기본 사용, 필요시에만 'use client'
+- @/ 경로 별칭 적극 활용
+- 컴포넌트명은 PascalCase, Props는 컴포넌트명 + Props 접미사
+- React 19 최신 기능 활용 (Actions, use 훅 등)
+
+## 파일 구조
+- src/app/ 디렉토리 구조 준수
+- 컴포넌트: src/components/, 유틸: src/lib/, 타입: src/types/
+- 테스트: __tests__/ 또는 .test.tsx 확장자
+
+## 성능 최적화
+- Next.js Image 컴포넌트 필수 사용
+- 동적 import로 코드 분할
+- Server Actions 우선 사용
+- 적절한 메모이제이션 (React.memo, useMemo, useCallback)
+
+## 코드 품질
+- console.log 사용 금지 (개발 환경 제외)
+- JSDoc 주석 작성
+- 접근성 고려 (semantic HTML, ARIA)
+- 테스트 코드 작성
+
+## 보안 및 성능
+- 환경 변수 적절히 관리
+- 번들 크기 최적화
+- SEO 최적화 (메타데이터 API 활용) 
