@@ -4,13 +4,69 @@ Next.js 프로젝트 개발 시 반복적으로 설정하는 개발 도구들과
 
 ## 포함된 기능
 
+- **Next.js 15**: App Router, React 19
 - **TypeScript**: 엄격한 타입 체크
 - **ESLint + Prettier**: 코드 품질 및 포맷팅
 - **Husky + Lint-staged**: Git hooks를 통한 자동화된 코드 검사
 - **TailwindCSS**: 유틸리티 CSS 프레임워크
+- **Form Management**: React Hook Form + Zod 검증
 - **Testing**: Jest + Testing Library
 - **Bundle Analyzer**: 번들 크기 분석
 - **VS Code 설정**: 개발 환경 최적화
+- **Cursor Rules**: AI 개발 도구 최적화
+
+## Quick Start
+
+폼 관리 예시를 확인하려면:
+
+```bash
+yarn dev
+# http://localhost:3000/form-demo 에서 예시 확인
+```
+
+## Form Management
+
+React Hook Form + Zod를 사용한 타입 안전한 폼 관리:
+
+```tsx
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { signInSchema, type SignInFormData } from '@/lib/validations';
+import { Input } from '@/components/ui/input';
+
+export function LoginForm() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<SignInFormData>({
+    resolver: zodResolver(signInSchema),
+  });
+
+  const onSubmit = (data: SignInFormData) => {
+    console.log(data); // { email: string, password: string, rememberMe?: boolean }
+  };
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <Input
+        type="email"
+        label="이메일"
+        register={register('email')}
+        error={errors.email}
+        required
+      />
+      <Input
+        type="password"
+        label="비밀번호"
+        register={register('password')}
+        error={errors.password}
+        required
+      />
+    </form>
+  );
+}
+```
 
 ## Bundle Analysis
 

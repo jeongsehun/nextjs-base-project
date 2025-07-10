@@ -1,17 +1,27 @@
-import { type ClassValue, clsx } from 'clsx';
+import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
 /**
- * 클래스명을 조건부로 결합하고 Tailwind CSS 충돌을 해결하는 유틸리티 함수
- *
- * @param inputs - 클래스명들 (문자열, 조건부 클래스, undefined, null 등)
- * @returns 병합된 클래스명 문자열
- *
- * @example
- * cn('px-2 py-1', 'bg-red-500') // 'px-2 py-1 bg-red-500'
- * cn('px-2', condition && 'bg-blue-500') // 조건부 클래스
- * cn('p-4', 'p-2') // 'p-2' (마지막 패딩이 우선)
+ * Tailwind CSS 클래스를 병합하는 유틸리티 함수
  */
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
+}
+
+/**
+ * 폼 에러 메시지를 포맷팅하는 유틸리티 함수
+ */
+export function formatFormError(error: unknown): string {
+  if (typeof error === 'string') return error;
+  if (error instanceof Error) return error.message;
+  return '알 수 없는 오류가 발생했습니다.';
+}
+
+/**
+ * 객체의 빈 필드를 제거하는 유틸리티 함수
+ */
+export function removeEmptyFields<T extends Record<string, unknown>>(obj: T): Partial<T> {
+  return Object.fromEntries(
+    Object.entries(obj).filter(([, value]) => value !== '' && value != null)
+  ) as Partial<T>;
 }
